@@ -1,11 +1,11 @@
 # Flask
 
 Basics:
-- Initial setup
+- ---Initial setup---
 - Json manipulation
 - Database manipulation
 - Blueprints and views
-- Templates
+- ---Templates---
 - Static files
 
 Intermediate:
@@ -20,6 +20,7 @@ Advanced:
 - Signals
 - Blueprints
 - CLI applications
+- Database with CLI
 - More extensions
 
 Challenges:
