@@ -8,22 +8,31 @@ Basics:
 - Templates
 - Static files
 
-intermediate
+Intermediate:
+- Tests
 - Scrap web info
-- Use 
+- Logging
 - Input Images
 - Output Videos and Images
 - Input Videos
 
-Challenges
+Advanced:
+- Signals
+- Blueprints
+- CLI applications
+- More extensions
+
+Challenges:
 - Blog
 - Process Images
+- Spotify "What am I listening to"
 - Spotify "Listen with me"
 
 Production:
+- Production
 - Portable/Installable
 - Test Coverage
-- Production
+- Caching
 - Open to public
 - React and webpack
 - Joining with javascript
