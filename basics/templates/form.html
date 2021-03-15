@@ -3,8 +3,29 @@
 {% block title %}Form{% endblock %}
 
 {% block body %}
+{% if error %}
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    This is an alert box.
+</div> 
+{% endif %}
 <form method="post">
-    <input type="text" name="form" />
+    <label for='form'>UserId</label><br>
+    <input type="text" name="userId" /><br>
+    <label for='form'>JobTitle</label><br>
+    <input type="text" name="jobTitle" /><br>
+    <label for='form'>FirstName</label><br>
+    <input type="text" name="firstName" /><br>
+    <label for='form'>LastName</label><br>
+    <input type="text" name="lastName" /><br>
+    <label for='form'>EmployeeCode</label><br>
+    <input type="text" name="employeeCode" /><br>
+    <label for='form'>Region</label><br>
+    <input type="text" name="region" /><br>
+    <label for='form'>PhoneNumber</label><br>
+    <input type="text" name="phoneNumber" /><br>
+    <label for='form'>EmailAddress</label><br>
+    <input type="text" name="emailAddress" /><br>
     <input type="submit" name="submit" />
 </form>
 {% endblock %}

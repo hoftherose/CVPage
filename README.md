@@ -2,7 +2,7 @@
 
 Basics:
 - ---Initial setup---
-- Json manipulation
+- ---Json manipulation---
 - Database manipulation
 - Blueprints and views
 - ---Templates---
