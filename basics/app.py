@@ -20,7 +20,7 @@ class EmployeeModel(db.Model):
     region      = db.Column(db.String(2), nullable=False)
     phone_num   = db.Column(db.String(7), nullable=False)
     email       = db.Column(db.String(100), nullable=False)
-    # created_at  = db.Column(db.DateTime())
+    # updated_at  = db.Column(db.DateTime())
 
     def __repr__(self):
         return f'{self.job_title} {self.usr_id}-{self.empl_code}: {self.lname} {self.fname}'
@@ -36,29 +36,28 @@ class DataBaseController(Resource):
     @marshal_with(mfields)
     def put(self, id):
         form = data_parser.parse_args()
-        entry = EmployeeModel(**form)
-        db.session.add(entry)
+        entry = EmployeeModel.query.filter_by(usr_id=id).first()
+        for key in form.keys():
+            if form[key] != None:
+                setattr(entry, key, form[key])
         db.session.commit()
         return entry, 201
     
-    # @marshal_with(mfields)
-    # def post(self, id):
-    #     form = data_parser.parse_args()
-    #     entry = EmployeeModel(**form)
-    #     db.session.add(entry)
-    #     db.session.commit()
-    #     return entry, 201
+    @marshal_with(mfields)
+    def post(self, id):
+        form = data_parser.parse_args()
+        entry = EmployeeModel(**form)
+        db.session.add(entry); db.session.commit()
+        return entry, 201
 
     def delete(self, id):
-        pass
+        rows = EmployeeModel.query.filter_by(usr_id=id).delete()
+        db.session.commit()
+        return f"Deleted {rows} row(s)", 201
 
 @app.route('/')
 def home():
     return render_template("index.html")
-
-# @app.route('/form/<int:usr_id>')
-# def form(usr_id):
-#     return render_template("form.html")
 
 api.add_resource(DataBaseController, '/form/<int:id>')
 

@@ -3,7 +3,7 @@
 Basics:
 - ---Initial setup---
 - ---Json manipulation---
-- Database manipulation
+- ---Database manipulation---
 - Tests
 - ---Templates---
 - Static files
