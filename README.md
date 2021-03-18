@@ -4,12 +4,12 @@ Basics:
 - ---Initial setup---
 - ---Json manipulation---
 - Database manipulation
-- Blueprints and views
+- Tests
 - ---Templates---
 - Static files
 
 Intermediate:
-- Tests
+- Blueprints and views
 - Scrap web info
 - Logging
 - Input Images
