@@ -46,29 +46,42 @@ class EmployeeModel(db.Model):
     def __repr__(self):
         return f'{self.job_title} {self.usr_id}-{self.empl_code}: {self.lname} {self.fname}'
 
+class DataBaseController(Resource):
+    def get(self, id):
+        result = EmployeeModel.query.filter_by(usr_id=id).first()
+        # result = EmployeeModel.query.filter(usr_id=id).all()
+        return result, 201
+    
+    @marshal_with(mfields)
+    def put(self, id):
+        form = data_parser.parse_args()
+        print(form)
+        entry = EmployeeModel(**form)
+        db.session.add(entry)
+        db.session.commit()
+        # return entry, 201
+        return "hello", 201
+    
+    # @marshal_with(mfields)
+    # def post(self, id):
+    #     form = data_parser.parse_args()
+    #     entry = EmployeeModel(**form)
+    #     db.session.add(entry)
+    #     db.session.commit()
+    #     return entry, 201
+
+    def delete(self, id):
+        pass
+
 @app.route('/')
 def home():
     return render_template("index.html")
 
-@app.route('/upload', methods=['GET', 'POST'])
-def upload():
-    if request.method == 'POST':
-        with open(fn, 'r') as f: data = json.load(f)
+# @app.route('/form/<int:usr_id>')
+# def form(usr_id):
+#     return render_template("form.html")
 
-        ok = modify_data(data, request)
-        
-        with open(fn, 'w') as f: json.dump(data, f)
-
-        if ok: return render_template("form.html", error=False)
-        return render_template("form.html", error=True)
-    return render_template("form.html", error=False)
-
-@app.route('/data', methods=['GET'])
-def data():
-    file = open(fn, 'r')
-    data = json.load(file)
-    file.close()
-    return data
+api.add_resource(DataBaseController, '/form/<int:id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
