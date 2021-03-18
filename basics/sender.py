@@ -16,5 +16,5 @@ data = [
 
 response = requests.put(BASE+'form/0', data[0])
 print(response)
-# response = requests.get(BASE+'form/0')
-# print(response)
+response = requests.get(BASE+'form/0')
+print(response)

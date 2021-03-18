@@ -25,21 +25,21 @@ class EmployeeModel(db.Model):
     def __repr__(self):
         return f'{self.job_title} {self.usr_id}-{self.empl_code}: {self.lname} {self.fname}'
 
+db.create_all()
+
 class DataBaseController(Resource):
+    @marshal_with(mfields)
     def get(self, id):
         result = EmployeeModel.query.filter_by(usr_id=id).first()
-        # result = EmployeeModel.query.filter(usr_id=id).all()
         return result, 201
     
     @marshal_with(mfields)
     def put(self, id):
         form = data_parser.parse_args()
-        print(form)
         entry = EmployeeModel(**form)
         db.session.add(entry)
         db.session.commit()
-        # return entry, 201
-        return "hello", 201
+        return entry, 201
     
     # @marshal_with(mfields)
     # def post(self, id):
