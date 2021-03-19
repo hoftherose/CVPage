@@ -59,6 +59,10 @@ class DataBaseController(Resource):
 def home():
     return render_template("index.html")
 
+@app.route('/data')
+def show_database():
+    return render_template("data.html", data=EmployeeModel)
+
 api.add_resource(DataBaseController, '/form/<int:id>')
 
 if __name__ == '__main__':
