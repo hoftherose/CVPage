@@ -12,6 +12,10 @@
             <td style="background-color: blue; border: 1px solid black;">Job title</td>
             <td style="background-color: blue; border: 1px solid black;">First name</td>
             <td style="background-color: blue; border: 1px solid black;">Last name</td>
+            <td style="background-color: blue; border: 1px solid black;">Employee code</td>
+            <td style="background-color: blue; border: 1px solid black;">Region</td>
+            <td style="background-color: blue; border: 1px solid black;">Phone number</td>
+            <td style="background-color: blue; border: 1px solid black;">Email</td>
         </tr>
         {% for entry in data.query.all() %}
             <tr>
@@ -19,6 +23,10 @@
                 <td style="border: 1px solid black;">{{ entry.job_title }}</td>
                 <td style="border: 1px solid black;">{{ entry.fname }}</td>
                 <td style="border: 1px solid black;">{{ entry.lname }}</td>
+                <td style="border: 1px solid black;">{{ entry.empl_code }}</td>
+                <td style="border: 1px solid black;">{{ entry.region }}</td>
+                <td style="border: 1px solid black;">{{ entry.phone_num }}</td>
+                <td style="border: 1px solid black;">{{ entry.email }}</td>
             </tr>
         {% endfor %}
     </table>

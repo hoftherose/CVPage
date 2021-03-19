@@ -66,7 +66,12 @@ def home():
 def form():
     if request.method == 'POST':
         info = request.form.to_dict()
-        requests.post(f"{url_for('form', _external=True)}/{info['usr_id']}", info)
+        if info['submit'] == "Enter":
+            requests.post(f"{url_for('form', _external=True)}/{info['usr_id']}", info)
+        elif info['submit'] == "Update":
+            requests.put(f"{url_for('form', _external=True)}/{info['usr_id']}", info)
+        elif info['submit'] == "Delete":
+            requests.delete(f"{url_for('form', _external=True)}/{info['usr_id']}")
     return render_template("form.html")
 
 @app.route('/data')

@@ -6,7 +6,7 @@ Basics:
 - ---Database manipulation---
 - ---Tests---
 - ---Templates---
-- Static files
+- ---Static files---
 
 Intermediate:
 - Blueprints and views
