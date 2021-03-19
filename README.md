@@ -9,7 +9,7 @@ Basics:
 - ---Static files---
 
 Intermediate:
-- Blueprints and views
+- ---Blueprints and views---
 - Scrap web info
 - Logging
 - Input Images
@@ -18,7 +18,6 @@ Intermediate:
 
 Advanced:
 - Signals
-- Blueprints
 - CLI applications
 - Database with CLI
 - More extensions
