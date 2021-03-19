@@ -3,8 +3,7 @@ import requests
 BASE = 'http://127.0.0.1:5000/'
 
 data = [
-   {'usr_id':       0,
-    'job_title':    'Developer',
+   {'job_title':    'Developer',
     'fname':        'Krsh',
     'lname':        'Lee',
     'empl_code':    'E1',
@@ -12,8 +11,7 @@ data = [
     'phone_num':    '134567',
     'email':        'krish.lee@learningcontainer.com'
     },
-   {'usr_id':       1,
-    'job_title':    'Developer',
+   {'job_title':    'Developer',
     'fname':        'Devid',
     'lname':        'Rome',
     'empl_code':    'Ee',
@@ -21,8 +19,7 @@ data = [
     'phone_num':    '1111111',
     'email':        'devid.rome@learningcontainer.com'
     },
-   {'usr_id':       0,
-    'job_title':    'Developer',
+   {'job_title':    'Developer',
     'fname':        'Krish',
     'lname':        'Lee',
     'empl_code':    'E1',
@@ -33,11 +30,11 @@ data = [
 ]
 
 def test_delete():
-    response = requests.delete(BASE+'form/0')
+    response = requests.delete(f'{BASE}form/0')
     assert response.status_code == 201
     assert response.json() in ["Deleted 1 row(s)", "Deleted 0 row(s)"]
 
-    response = requests.delete(BASE+'form/1')
+    response = requests.delete(f'{BASE}form/1')
     assert response.status_code == 201
     assert response.json() in ["Deleted 1 row(s)", "Deleted 0 row(s)"]
 

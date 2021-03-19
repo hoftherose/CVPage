@@ -1,8 +1,9 @@
 # import os
-from flask import Flask, render_template, request#, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 from flask_restful import Api, Resource, reqparse, fields, marshal_with
 from flask_sqlalchemy import SQLAlchemy
 from data.parsers import mfields, data_parser
+import requests
 
 app = Flask(__name__)
 api = Api(app)
@@ -40,16 +41,18 @@ class DataBaseController(Resource):
         for key in form.keys():
             if form[key] != None:
                 setattr(entry, key, form[key])
+        setattr(entry, "usr_id", id)
         db.session.commit()
         return entry, 201
     
     @marshal_with(mfields)
     def post(self, id):
         form = data_parser.parse_args()
-        entry = EmployeeModel(**form)
+        entry = EmployeeModel(usr_id=id, **form)
         db.session.add(entry); db.session.commit()
         return entry, 201
 
+    @marshal_with(mfields)
     def delete(self, id):
         rows = EmployeeModel.query.filter_by(usr_id=id).delete()
         db.session.commit()
@@ -58,6 +61,13 @@ class DataBaseController(Resource):
 @app.route('/')
 def home():
     return render_template("index.html")
+
+@app.route('/form', methods=["GET", "POST", "PUT", "DELETE"])
+def form():
+    if request.method == 'POST':
+        info = request.form.to_dict()
+        requests.post(f"{url_for('form', _external=True)}/{info['usr_id']}", info)
+    return render_template("form.html")
 
 @app.route('/data')
 def show_database():
