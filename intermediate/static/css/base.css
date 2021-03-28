@@ -1,0 +1,9 @@
+body {
+    background-color: lightgray;
+}
+
+.center {
+    display: block;
+    margin: auto;
+    align-items: center;
+}
