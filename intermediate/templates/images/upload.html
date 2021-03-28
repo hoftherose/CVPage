@@ -1,7 +1,43 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+    <style>
+        .img-1 {
+            background: url(../..{{ url_for('static', filename='assets/dog.jpg') }}) no-repeat;
+            background-size: 750px;
+        }
+        .img-2 {
+            background: url(../..{{ url_for('static', filename='assets/dog_no_color.jpg') }}) no-repeat;
+            background-size: 750px;
+        }
+    </style>
+{% endblock %}
+
 {% block title %}Upload File{% endblock %}
 
 {% block body %}
-    <img src={{ url_for("static", filename="dog.jpg") }} width=10%>
+    <div class="wrapper">
+        <div class="images">
+            <div class="img-1"></div>
+            <div class="img-2"></div>
+        </div>
+        <div class="slider">
+            <div class="drag-line">
+                <span></span>
+            </div>
+            <input class="slider_true" type="range" min="0" max="100" value="50">
+        </div>
+    </div>
+  
+    <script>
+    const slider = document.querySelector(".slider input"); slider.value = 50;
+    const img = document.querySelector(".images .img-2");
+    const dragLine = document.querySelector(".slider .drag-line");
+    slider.oninput = ()=>{
+        let sliderVal = slider.value;
+        dragLine.style.left = sliderVal + "%";
+        img.style.width = sliderVal + "%";
+    }
+    </script>  
 {% endblock %}
