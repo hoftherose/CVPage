@@ -6,6 +6,8 @@ def create_app():
     app = Flask(__name__)
     app.register_blueprint(TextProcessor)
     app.register_blueprint(ImageProcessor)
+
+    app.config["CACHE_TYPE"] = "null"
     return app
 
 if __name__ == "__main__":
