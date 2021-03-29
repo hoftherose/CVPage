@@ -8,8 +8,10 @@ def ImageHome():
 @ImageProcessor.route("/image/upload", methods=["GET", "POST"])
 def UploadImage():
     if request.method == "POST":
-        if 'input_image' in request.files:
-            print(request.files['input_image'])
+        file = request.files['input_image']
+        if file.filename != "":
+            file.save(f'static/assets/temp/{file.filename}')
+            return render_template("images/upload.html", file=file)
     return render_template("images/upload.html")
 
 @ImageProcessor.route("/image/view")
