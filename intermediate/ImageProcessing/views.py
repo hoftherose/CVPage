@@ -13,7 +13,15 @@ def UploadImage():
 
 @ImageProcessor.route("/image/view", methods=["GET", "POST"])
 def ViewImage():
-    data = json.loads(request.data)
     if request.method == "POST":
-        return render_template("images/view.html", data=data)
+        img = request.form['image']
+        processed_img = process(img)
+        processed = {
+            'filename': f'processed_{request.form["filename"]}',
+            'file': processed_img
+        }
+        return render_template("images/view.html", original=request.form, processed=processed)
     return render_template("images/view.html")
+
+def process(img):
+    return img
