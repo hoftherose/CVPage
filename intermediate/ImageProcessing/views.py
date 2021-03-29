@@ -1,4 +1,6 @@
-from flask import Blueprint, request, render_template, url_for
+from flask import Blueprint, request, redirect, render_template, url_for
+import json
+
 ImageProcessor = Blueprint("image_views", __name__)
 
 @ImageProcessor.route("/image/")
@@ -7,13 +9,11 @@ def ImageHome():
 
 @ImageProcessor.route("/image/upload", methods=["GET", "POST"])
 def UploadImage():
-    if request.method == "POST":
-        file = request.files['input_image']
-        if file.filename != "":
-            file.save(f'static/assets/temp/{file.filename}')
-            return render_template("images/upload.html", file=file)
     return render_template("images/upload.html")
 
-@ImageProcessor.route("/image/view")
+@ImageProcessor.route("/image/view", methods=["GET", "POST"])
 def ViewImage():
+    data = json.loads(request.data)
+    if request.method == "POST":
+        return render_template("images/view.html", data=data)
     return render_template("images/view.html")
