@@ -29,3 +29,8 @@ def process(img_data):
     img = processing.base64.decode(img_64)
     img_gray = processing.img2gray(img)
     return prefix+","+processing.base64.encode(img_gray)
+
+def valid_func(func_name):
+    if func_name in processing.__dict__ and func_name[:3] == "img":
+        return hasattr(processing.__dict__[func_name], "__call__")
+    return False
