@@ -4,18 +4,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/view.css') }}">
     <style>
         .img-1 {
-            {% if original['image'] == "" %}
-                background: url(../..{{ url_for('static', filename='assets/dog.jpg') }}) no-repeat;
+            {% if original['filename'] == "" %}
+            background: url(../..{{ url_for('static', filename='assets/dog.jpg') }}) no-repeat;
             {% else %}
-                background: url({{ original['image'] }}) no-repeat;
+            background: url({{ original['image'] }}) no-repeat;
             {% endif %}
             background-size: 750px;
         }
         .img-2 {
-            {% if processed['image'] == "" %}
+            {% if processed['filename'] == "" %}
             background: url(../..{{ url_for('static', filename='assets/dog_no_color.jpg') }}) no-repeat;
             {% else %}
-                background: url({{ processed['image'] }}) no-repeat;
+            background: url({{ processed['image'] }}) no-repeat;
             {% endif %}
             background-size: 750px;
         }
