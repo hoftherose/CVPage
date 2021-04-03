@@ -8,7 +8,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <form class="container" action="view" method="post">
+    <form class="container" action="../view/{{ func_name }}" method="post">
         <div class="wrapper">
             <div class="image">
                 <img src="" alt="">
@@ -29,7 +29,6 @@
         <input id="image-data" name="image" type="text" hidden>
         <button type="submit" id="custom-btn">Upload <i class="fa fa-cloud-upload"></i></button>
     </form>
-    <div class="redirect" hidden>{{ url_for('image_views.ViewImage') }}</div>
     <script>
         const wrapper = document.querySelector(".wrapper");
         const fileName = document.querySelector(".file-name");
@@ -37,7 +36,6 @@
         const cancelBtn = document.querySelector("#cancel-btn i");
         const img = document.querySelector("img");
         const imgData = document.querySelector("#image-data");
-        const redirect = document.querySelector(".redirect");
         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
         function defaultBtnActive(){
             defaultBtn.click();
@@ -64,19 +62,5 @@
                 fileName.textContent = valueStore;
             }
         });
-        function uploadBtnActivate(){
-            if(fileName.textContent != "File name here"){
-                let data = {'file': img.src, 'file_name': fileName.textContent}
-                fetch("view", {
-                    method: "POST", 
-                    body: JSON.stringify(data)
-                }).then(res => {
-                    window.location = redirect.textContent;
-                });
-            }
-            else{
-                console.log("no file");
-            }
-        }
     </script>
 {% endblock %}

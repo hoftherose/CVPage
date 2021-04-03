@@ -13,7 +13,7 @@ def ImageHome():
 def UploadImage(func_name):
     if valid_func(func_name):
         return render_template("images/upload.html", func_name=func_name)
-    return redirect(ImageHome)
+    return redirect(url_for("image_views.ImageHome"))
 
 @ImageProcessor.route("/image/view/<string:func_name>", methods=["GET", "POST"])
 def ViewImage(func_name):
@@ -25,7 +25,7 @@ def ViewImage(func_name):
             'image': processed_img
         }
         return render_template("images/view.html", original=request.form, processed=processed)
-    return render_template("images/view.html", original=EMPTY_IMG, processed=EMPTY_IMG)
+    return redirect(url_for("image_views.ImageHome"))
 
 def process(img_data, func_name):
     prefix, img_64 = img_data.split(',')
