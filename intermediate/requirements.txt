@@ -1,0 +1,5 @@
+numpy
+Flask
+Flask-RESTful
+Flask-SQLAlchemy
+Pillow
