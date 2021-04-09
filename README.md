@@ -9,8 +9,8 @@ Basics:
 - ---Static files---
 
 Intermediate:
-- Blueprints and views
-- Scrap web info
+- ---Blueprints and views---
+- External Api's
 - Logging
 - Input Images
 - Output Videos and Images
@@ -18,7 +18,7 @@ Intermediate:
 
 Advanced:
 - Signals
-- Blueprints
+- Scrap web info
 - CLI applications
 - Database with CLI
 - More extensions
