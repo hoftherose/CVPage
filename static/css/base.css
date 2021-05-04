@@ -1,5 +1,7 @@
 body {
-    background-color: lightgray;
+    margin: 0;
+    background-image: url("../assets/dog_background.jpg");
+    background-size: cover;
 }
 
 .center {

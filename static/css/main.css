@@ -1,0 +1,19 @@
+@import "base.css";
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+    padding-right: 100px;
+    background-color: rgba(72, 83, 92, 0.35);
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding-right: 60px;
+}

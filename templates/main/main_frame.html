@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 {% endblock %}
 
 {% block body %}
-    <h1>LOGO</h1>
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li style="float: left">Portfolio Page</li>
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About Me</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </div>
 {% endblock %}
