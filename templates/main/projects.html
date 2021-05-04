@@ -1,12 +1,9 @@
-{% extends 'base.html' %}
-
-{% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-{% endblock %}
+{% extends 'main/main_frame.html' %}
 
 {% block title %}Projects{% endblock %}
 
 {% block body %}
+    {{ super() }}
     <div>
         <div>
             Image Processing Projects
