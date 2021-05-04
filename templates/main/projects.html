@@ -4,12 +4,18 @@
 
 {% block body %}
     {{ super() }}
-    <div>
-        <div>
-            Image Processing Projects
+    <div class="project-showcase">
+        <div class="card">
+            <div class="card-header">Image Processing Projects</div>
+            <div class="card-main">
+                <img src="{{ url_for('static', filename='assets/dog.jpg') }}" alt="">
+            </div>
         </div>
-        <div>
-            Other Deep Learning Projects
+        <div class="card">
+            <div class="card-header">Other Deep Learning Projects</div>
+            <div class="card-main">
+                <img src="{{ url_for('static', filename='assets/dog.jpg') }}" alt="">
+            </div>
         </div>
     </div>
 {% endblock %}
