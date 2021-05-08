@@ -1,14 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('myStage'){
+    stage('fileView') {
       steps {
         sh 'ls -la' 
       }
     }
-    stage('Build') {
+    stage('buildDockerImage') {
+      steps {
+        sh 'docker build -t hoftherose/deep-learning-showcase:latest .  '
+      }
+    }
+    stage('pushImage') {
       steps { 
-        sh 'ls' 
+        sh 'docker push hoftherose/deep-learning-showcase:latest'
       }
     }
   }
