@@ -16,5 +16,12 @@ pipeline {
         sh 'docker push hoftherose/deep-learning-showcase:latest'
       }
     }
+    stage('deployAppGCP') {
+      steps {
+        sh '''#!/bin/bash
+          gcloud builds submit -t gcr.io/project-showcase-313416/deep-learning-showcase:$(git log -1 --pretty=%B | awk '{print $1;}') .
+        '''
+      }
+    }
   }
 }
