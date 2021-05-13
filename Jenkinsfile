@@ -27,5 +27,12 @@ pipeline {
         '''
       }
     }
+    stage('deployAppGCPLatest') {
+      steps {
+        sh '''#!/bin/bash
+          gcloud builds submit -t gcr.io/project-showcase-313416/deep-learning-showcase:latest .
+        '''
+      }
+    }
   }
 }
