@@ -23,7 +23,7 @@ pipeline {
     stage('deployAppGCP') {
       steps {
         sh '''#!/bin/bash
-        kubectl apply deployment project-showcase --image=gcr.io/project-showcase-313416/deep-learning-showcase:latest
+          gcloud builds submit -t gcr.io/project-showcase-313416/deep-learning-showcase:latest .
         '''
       }
     }
