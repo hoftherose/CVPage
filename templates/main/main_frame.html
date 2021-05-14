@@ -5,14 +5,20 @@
 {% endblock %}
 
 {% block body %}
-    <div class="nav-bar">
+    <div class="top-bar">
+        <div class="exit-buttons">xxx</div>
+        <div class="app-title"></div>
+    </div>
+    <div class="side-bar">
         <nav>
             <ul>
-                <li style="float: left">Portfolio Page</li>
-                <li>Home</li>
-                <li>Projects</li>
-                <li>About Me</li>
-                <li>Contact</li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/home.svg') }}">Home</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/files.svg') }}">Projects</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/search.svg') }}">Search</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/source-control.svg') }}">Curriculum</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/extensions.svg') }}">Certificados</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/account.svg') }}">About Me</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/settings-gear.svg') }}">Settings</a></li>
             </ul>
         </nav>
     </div>
