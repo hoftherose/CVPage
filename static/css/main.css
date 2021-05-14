@@ -1,5 +1,15 @@
 @import "base.css";
 
+body {
+    background-color: rgb(33, 39, 47);
+    /* darker shade in explorer
+        background-color: rgb(29, 34, 41);
+    */
+    /* light separater lines
+        background-color: rgb(66, 76, 87);
+    */
+}
+
 .nav-bar{
     display: flex;
     align-items: center;
