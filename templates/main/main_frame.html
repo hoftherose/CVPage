@@ -8,11 +8,13 @@
     <div class="nav-bar">
         <nav>
             <ul>
-                <li style="float: left">Portfolio Page</li>
-                <li>Home</li>
-                <li>Projects</li>
-                <li>About Me</li>
-                <li>Contact</li>
+                <li style="float: left">
+                    <a href='{{ url_for("home_pages.Home") }}'>Portfolio Page</a>
+                </li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'>Home</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'>Projects</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'>About Me</a></li>
+                <li><a href='{{ url_for("home_pages.Projects") }}'>Contact</a></li>
             </ul>
         </nav>
     </div>
