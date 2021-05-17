@@ -10,21 +10,22 @@ body {
     */
 }
 
-.nav-bar{
-    display: flex;
-    align-items: center;
-    padding-bottom: 50px;
+.side-bar{
+    height: 96%;
+    width: 58px;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(33, 39, 47);
+    border: 1px solid;
+    border-color: rgb(66, 76, 87);
 }
 
-nav{
-    flex: 1;
-    text-align: right;
-    padding-right: 100px;
-    background-color: rgba(72, 83, 92, 0.35);
+.side-bar a img {
+    height: 50px;
+    width: 50px;
 }
 
-nav ul li{
-    list-style: none;
-    display: inline-block;
-    padding-right: 60px;
+.side-bar .bottom-icons{
+    position: absolute;
+    bottom: 20px;
 }
