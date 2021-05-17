@@ -5,11 +5,17 @@
 {% endblock %}
 
 {% block body %}
-    <div class="top-bar">
+    <div class="top-bar side-bars">
         <div class="exit-buttons">xxx</div>
-        <div class="app-title"></div>
+        <div class="app-title">
+            {% if page is defined %}
+                {{ page.get('title') }}
+            {% else %}
+                VSCode
+            {% endif %}
+        </div>
     </div>
-    <div class="side-bar">
+    <div class="left-bar side-bars">
         <div class="top-icons">
             <a title="Home" href='{{ url_for("home_pages.Projects") }}'>
                 <img src="{{ url_for('static', filename='assets/icons/home.svg') }}">
@@ -35,5 +41,8 @@
                 <img src="{{ url_for('static', filename='assets/icons/settings-gear.svg') }}">
             </a>
         </div>
+    </div>
+    <div class="bottom-bar side-bars">
+        Frontend
     </div>
 {% endblock %}
