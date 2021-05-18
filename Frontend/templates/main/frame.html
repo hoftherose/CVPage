@@ -11,7 +11,7 @@
             <div class="btn" style="background-color:yellow;"><a>–</a></div>
             <div class="btn" style="background-color:green;"><a>&#x2921;</a></div>
         </div>
-        <div class="app-title">
+        <div class="app-title system-text">
             {% if page is defined %}
                 {{ page.get('title') }}
             {% else %}
@@ -46,7 +46,21 @@
             </a>
         </div>
     </div>
-    <div class="bottom-bar side-bars">
-        Frontend
+    <div class="bottom-bar side-bars system-text">
+        <div class="bottom-left-side">
+            Frontend*
+            Python 64-bit ('base': conda)
+        </div>
+        <div class="bottom-right-side">
+            Ln 54, Col 23
+            Spaces 4
+            UTF-8
+            LF
+            html
+            kite:ready
+            Prettier
+            FeedBack
+            Notifications
+        </div>
     </div>
 {% endblock %}
