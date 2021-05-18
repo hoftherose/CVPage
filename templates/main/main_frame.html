@@ -6,7 +6,11 @@
 
 {% block body %}
     <div class="top-bar side-bars">
-        <div class="exit-buttons">xxx</div>
+        <div class="exit-buttons">
+            <div class="btn" style="background-color:red;"><a>×</a></div>
+            <div class="btn" style="background-color:yellow;"><a>–</a></div>
+            <div class="btn" style="background-color:green;"><a>&#x2921;</a></div>
+        </div>
         <div class="app-title">
             {% if page is defined %}
                 {{ page.get('title') }}

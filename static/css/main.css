@@ -3,11 +3,11 @@
 body {
     background-color: rgb(33, 39, 47);
     margin: 0 100px 0 0;
-    /* darker shade in explorer
-        background-color: rgb(29, 34, 41);
-    */
-    /* light separater lines
-        background-color: rgb(66, 76, 87);
+    /*
+    darker shade in explorer
+    background-color: rgb(29, 34, 41);
+    light separater lines
+    background-color: rgb(66, 76, 87);
     */
 }
 
@@ -21,21 +21,39 @@ body {
     z-index: 2;
 }
 
-.top-bar{
+.top-bar {
     display: inline-flex;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.top-bar .exit-buttons{
+.top-bar .exit-buttons {
     width: 5%;
+    display: inline-flex;
 }
 
-.top-bar .app-title{
+.exit-buttons .btn {
+    line-height: 15px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.exit-buttons .btn a {
+    display: none;
+}
+
+.exit-buttons:hover .btn a {
+    color: rgba(0,0,0,0.6);
+    display: inline;
+}
+
+.top-bar .app-title {
     width: 95%;
 }
 
-.left-bar{
+.left-bar {
     z-index: 1;
     width: 58px;
     height: 96%;
@@ -50,7 +68,7 @@ body {
     width: 50px;
 }
 
-.left-bar .bottom-icons{
+.left-bar .bottom-icons {
     position: absolute;
     bottom: 20px;
 }
