@@ -62,21 +62,30 @@ body {
 .left-bar {
     z-index: 1;
     width: 58px;
-    height: 96%;
-    margin-top: 25px;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 15px;
     position: fixed;
     border-top-width: 0px;
     border-bottom-width: 0px;
 }
 
 .left-bar a img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
+    padding-top: 15px;
+    filter: invert(61%) sepia(2%) saturate(1974%) hue-rotate(167deg) brightness(88%) contrast(81%);
+    /* filter to create color: rgb(127, 138, 148); */
+}
+
+.left-bar a img:hover {
+    filter: invert(77%) sepia(8%) saturate(353%) hue-rotate(157deg) brightness(95%) contrast(88%);
+    /* filter to create color: rgb(171, 184, 197) */
 }
 
 .left-bar .bottom-icons {
     position: absolute;
-    bottom: 20px;
+    bottom: 70px;
 }
 
 .bottom-bar {
