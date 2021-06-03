@@ -1,8 +1,43 @@
 {% extends 'main/frame.html' %}
 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
 {% block body %}
     {{ super() }}
     <div class="content">
-        Hi, my name is Hector and I write code.
+        <div class="activity_bar"></div>
+        <div class="editor">
+            <div class="tabs">
+                <div class="tab">
+                    Welcome
+                </div>
+            </div>
+            <div class="welcome_page">
+                <div class="welcome_title">
+                    Code - OSS
+                </div>
+                <div class="welcome_subtitle">
+                    Editing Evolved
+                </div>
+                <div class="sections">
+                    <ul>
+                        Start
+                        <li>New file</li>
+                        <li>Open folder...</li>
+                    </ul>
+                    <ul>
+                        Recent
+                        <li>Flask</li>
+                    </ul>
+                    <ul>
+                        Help
+                        <li>Stack Overflow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
