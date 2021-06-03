@@ -1,0 +1,95 @@
+body {
+    background-color: rgb(33, 39, 47);
+    margin: 0 100px 0 0;
+    /*
+    darker shade in explorer
+    background-color: rgb(29, 34, 41);
+    light separater lines
+    background-color: rgb(66, 76, 87);
+    */
+}
+
+.side-bars {
+    width: calc(100% - 2px);
+    position: absolute;
+    border-color: rgb(66, 76, 87);
+    background-color: rgb(33, 39, 47);
+    border-style: solid;
+    border-width: 1px;
+    z-index: 2;
+}
+
+.top-bar {
+    display: inline-flex;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.top-bar .exit-buttons {
+    width: 80px;
+    display: inline-flex;
+}
+
+.exit-buttons .btn {
+    height: 15px;
+    width: 15px;
+    margin-top: 6px;
+    margin-left: 9px;
+    line-height: 15px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.exit-buttons .btn a {
+    display: none;
+}
+
+.exit-buttons:hover .btn a {
+    color: rgba(0,0,0,0.6);
+    display: inline;
+}
+
+.top-bar .app-title {
+    width: 100%;
+    margin-top: 6px;
+    text-align: center;
+    color: rgb(118, 131, 144);
+    font-size: small;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.left-bar {
+    z-index: 1;
+    width: 58px;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 15px;
+    position: fixed;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.left-bar a img {
+    height: 40px;
+    width: 40px;
+    padding-top: 15px;
+    filter: invert(61%) sepia(2%) saturate(1974%) hue-rotate(167deg) brightness(88%) contrast(81%);
+    /* filter to create color: rgb(127, 138, 148); */
+}
+
+.left-bar a img:hover {
+    filter: invert(77%) sepia(8%) saturate(353%) hue-rotate(157deg) brightness(95%) contrast(88%);
+    /* filter to create color: rgb(171, 184, 197) */
+}
+
+.left-bar .bottom-icons {
+    position: absolute;
+    bottom: 70px;
+}
+
+.bottom-bar {
+    bottom: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
