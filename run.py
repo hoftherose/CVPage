@@ -1,7 +1,5 @@
 from flask import Flask
-from HomePages import HomePage
-from TextProcessing import TextProcessor
-from ImageProcessing import ImageProcessor
+from Blueprints import HomePage, TextProcessor, ImageProcessor
 
 def create_app():
     app = Flask(__name__)
