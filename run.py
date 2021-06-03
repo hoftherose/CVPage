@@ -1,10 +1,14 @@
 from flask import Flask
-from HomePages import HomePage
-from TextProcessing import TextProcessor
-from ImageProcessing import ImageProcessor
+from Blueprints import HomePage, TextProcessor, ImageProcessor
+
+STATIC_FOLDER = "Frontend"
+TEMPLATE_FOLDER = "Frontend/templates"
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__,
+        static_folder=STATIC_FOLDER,
+        template_folder=TEMPLATE_FOLDER
+    )
     
     app.register_blueprint(HomePage)
     app.register_blueprint(TextProcessor)
