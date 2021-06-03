@@ -5,21 +5,48 @@
 {% endblock %}
 
 {% block body %}
-    <div class="top-bar">
-        <div class="exit-buttons">xxx</div>
-        <div class="app-title"></div>
+    <div class="top-bar side-bars">
+        <div class="exit-buttons">
+            <div class="btn" style="background-color:red;"><a>×</a></div>
+            <div class="btn" style="background-color:yellow;"><a>–</a></div>
+            <div class="btn" style="background-color:green;"><a>&#x2921;</a></div>
+        </div>
+        <div class="app-title">
+            {% if page is defined %}
+                {{ page.get('title') }}
+            {% else %}
+                Hector M. de la Rosa Prado
+            {% endif %}
+        </div>
     </div>
-    <div class="side-bar">
-        <nav>
-            <ul>
-                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/home.svg') }}">Home</a></li>
-                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/files.svg') }}">Projects</a></li>
-                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/search.svg') }}">Search</a></li>
-                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/source-control.svg') }}">Curriculum</a></li>
-                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/extensions.svg') }}">Certificados</a></li>
-                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/account.svg') }}">About Me</a></li>
-                <li><a href='{{ url_for("home_pages.Projects") }}'><img src="{{ url_for('static', filename='assets/icons/settings-gear.svg') }}">Settings</a></li>
-            </ul>
-        </nav>
+    <div class="left-bar side-bars">
+        <div class="top-icons">
+            <a title="Home" href='{{ url_for("home_pages.Projects") }}'>
+                <img src="{{ url_for('static', filename='assets/icons/home.svg') }}">
+            </a>
+            <a title="Projects" href='{{ url_for("home_pages.Projects") }}'>
+                <img src="{{ url_for('static', filename='assets/icons/files.svg') }}">
+            </a>
+            <a title="Search" href='{{ url_for("home_pages.Projects") }}'>
+                <img src="{{ url_for('static', filename='assets/icons/search.svg') }}">
+            </a>
+            <a title="Curriculum" href='{{ url_for("home_pages.Projects") }}'>
+                <img src="{{ url_for('static', filename='assets/icons/source-control.svg') }}">
+            </a>
+            <a title="Certificados" href='{{ url_for("home_pages.Projects") }}'>
+                <img src="{{ url_for('static', filename='assets/icons/extensions.svg') }}">
+            </a>
+        </div>
+        <div class="bottom-icons">
+            <a class="bottom" title="About Me" href='{{ url_for("home_pages.Projects") }}'>
+                <img src="{{ url_for('static', filename='assets/icons/account.svg') }}">
+            </a>
+            <a class="bottom" title="Settings" href='{{ url_for("home_pages.Projects") }}'>
+                <img src="{{ url_for('static', filename='assets/icons/settings-gear.svg') }}">
+            </a>
+        </div>
+    </div>
+    <div class="bottom-bar side-bars">
+        Frontend
     </div>
 {% endblock %}
