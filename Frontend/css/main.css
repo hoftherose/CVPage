@@ -19,3 +19,24 @@
     background-color: rgb(33, 39, 47);
     color: rgb(118, 131, 144);
 }
+
+.welcome_page {
+    margin-top: 50px;
+    margin-left: 75px;
+}
+
+.welcome_title {
+    color: rgb(118, 131, 144);
+}
+
+.sections ul {
+    list-style-type: none;
+}
+
+.sections ul h3{
+    color: rgb(118, 131, 144);
+}
+
+.sections ul li{
+    color: lightblue;;
+}
